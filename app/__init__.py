@@ -15,3 +15,5 @@ migrate = Migrate(app, db)
 
 logs = LogSetup()
 logs.init_app(app)
+
+from app import routes, models  # noqa

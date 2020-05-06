@@ -34,3 +34,8 @@ when one user has several different strategies or different users have different
 5. Add more complex key types (perhaps linked data ala wikipedia ?).
 5. Try to derive some formal bounds on the conditions in which this type of system would be useful.
 
+
+# Onboarding:
+
+1. `pip install -r requirements.txt` in a virtualenv
+2. `python app/scripts/populate_db.py`
