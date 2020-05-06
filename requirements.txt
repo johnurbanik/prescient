@@ -6,3 +6,4 @@ xgboost
 lightfm
 flask-SQLAlchemy
 flask-Migrate
+jupyterlab

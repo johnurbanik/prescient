@@ -12,7 +12,7 @@ Some precedent exists for the effectiveness of this type of caching; [Netflix us
 
 1. Build a simple python based webserver that takes requests to a 'get' endpoint for a specific key. For the sake of
 simplicity, requests also require a user-id. In the future, authentication can be added.
-2. Write a script that populates a simple KV-store with \~1m KV-pairs, where each key and value is an int32.
+2. Write a script that populates a simple KV-store with \~1m KV-pairs, where each key and value is an int.
 3. Write middleware that logs the time, key, and user for each database call (in SQLLite).
 4. Come up with a few 'query strategies' that someone would take when deciding their next query. Write scripts that make
 synthetic requests based on these strategies, with fixed time between requests for 100 users.
