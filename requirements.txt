@@ -1,0 +1,8 @@
+flask
+featuretools
+pandas
+sklearn
+xgboost
+lightfm
+flask-SQLAlchemy
+flask-Migrate
