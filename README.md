@@ -16,13 +16,12 @@ simplicity, requests also require a user-id. In the future, authentication can b
 3. Write middleware that logs the time, key, and user for each database call (in SQLLite).
 4. Come up with a few 'query strategies' that someone would take when deciding their next query. Write scripts that make
 synthetic requests based on these strategies, with fixed time between requests for 100 users.
-5. Build a system that returns N guesses at the next query. These can be based on ML or just rules.
+5. Build a system that establishes some various guesses at features.
 
 
 
 ## Pairing:
-1. Come up with a list of M (<N) guesses based on the library of guesses. Treat as a multiclass classification or a
-learning to rank problem.
+1. Add guesses to a 'library' of guesses, build a regression on top of this. Compare to a more naive decision tree. 
 
 ## Time permitting:
 1. Write a script that tests performance under a few of the query strategies, wherein all users are following one

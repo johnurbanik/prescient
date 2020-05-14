@@ -16,7 +16,17 @@ def fill_series(series, strat):
     return pd.Series(new_vals, index=series.index).astype(int)
 
 
-def seed_paginated_access(base_time, user_count=1000, req_per_user=100):
+def func(x):
+    if (x % 2 == 0):
+        return int(x * 1.2) % int(1e6)
+
+    elif (x % 3 == 0):
+        return int(x / 3) % int(1e6)
+    else:
+        return (x + 30) % int(1e6)
+
+
+def seed_paginated_access(base_time, user_count=100000, req_per_user=10):
     try:
         db.session.query(AccessLog).delete()
         db.session.commit()
@@ -34,10 +44,10 @@ def seed_paginated_access(base_time, user_count=1000, req_per_user=100):
         ) for idx, start in enumerate(start_times)
     ]).astype(int)
 
-    df.loc[df.action == 0, 'key'] = np.random.randint(0, 1e6, 1000)
-    df['key'] = fill_series(df['key'], lambda x: (x + 10) % int(1e6))  # paginate by 10
+    df.loc[df.action == 0, 'key'] = np.random.randint(0, 1e6, user_count)
+    df['key'] = fill_series(df['key'], func)  # paginate by 10
     df = df.assign(value=data.loc[df['key'].values].values)
-    df = df.reset_index().rename({'index': 'time'}, axis=1).drop('action', axis=1)
+    df = df.reset_index().rename({'index': 'time'}, axis=1).drop('action', axis=1).sort_values('time')
     df.to_sql('access_log', con=db.engine, index=False, if_exists='append', chunksize=1000)
 
 
