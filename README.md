@@ -8,7 +8,7 @@ This proof-of-concept is being developed as part of the pairing interview for [R
 
 Some precedent exists for the effectiveness of this type of caching; [Netflix uses similar techniques](https://netflixtechblog.com/using-machine-learning-to-improve-streaming-quality-at-netflix-9651263ef09f) to try to preload content.
 
-## Plans:
+## Completed:
 
 1. Build a simple python based webserver that takes requests to a 'get' endpoint for a specific key. For the sake of
 simplicity, requests also require a user-id. In the future, authentication can be added.
@@ -26,12 +26,12 @@ synthetic requests based on these strategies, with fixed time between requests f
 ## Time permitting:
 1. Write a script that tests performance under a few of the query strategies, wherein all users are following one
 strategy, but with different initial conditions.
-2. Explore using featuretools to come up with better features for the model.
-3. Explore multi-modal uses cases, and develop techniques that can predict well under these mixed modes. This includes
-when one user has several different strategies or different users have different strategies.
+2. Explore using DEAP for co-evolution of features / novelty based scoring.
+3. Explore multi-modal uses cases, and develop techniques that can predict well under these mixed modes. This includes when one user has several different strategies or different users have different strategies.
 4. Add stochasticity to the query strategies (or move to a stochastic decision process of next action).
 5. Add more complex key types (perhaps linked data ala wikipedia ?).
-5. Try to derive some formal bounds on the conditions in which this type of system would be useful.
+6. Switch to a library of guesses based on multiclass regression or learning to rank.
+7. Try to derive some formal bounds on the conditions in which this type of system would be useful.
 
 
 # Onboarding:
