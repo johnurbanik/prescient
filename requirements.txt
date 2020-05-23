@@ -1,9 +1,11 @@
-flask
 featuretools
+flask
+flask-Migrate
+flask-SQLAlchemy
+gplearn
+jupyterlab
+lightgbm
 pandas
+seaborn
 sklearn
 xgboost
-lightfm
-flask-SQLAlchemy
-flask-Migrate
-jupyterlab

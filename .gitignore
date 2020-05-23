@@ -140,3 +140,5 @@ cython_debug/
 app.db
 
 lgb/*
+
+*.code_workspace

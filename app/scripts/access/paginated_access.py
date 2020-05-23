@@ -17,13 +17,14 @@ def fill_series(series, strat):
 
 
 def func(x):
-    if (x % 2 == 0):
-        return int(x * 1.2) % int(1e6)
-
-    elif (x % 3 == 0):
+    if (x < 100):
+        return np.random.randint(0, 1e6, len(x))  # Seeds more uniform distribution
+    if (x % 3 == 0):
         return int(x / 3) % int(1e6)
+    elif (x % 2 == 0):
+        return int(x * 1.2) % int(1e6)
     else:
-        return (x + 30) % int(1e6)
+        return (x + 7) % int(1e6)
 
 
 def seed_paginated_access(base_time, user_count=100000, req_per_user=10):

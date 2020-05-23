@@ -1,0 +1,19 @@
+name: prescient
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - beakerx
+  - featuretools
+  - flask
+  - flask-Migrate
+  - flask-SQLAlchemy
+  - jupyterlab
+  - lightgbm
+  - pandas
+  - seaborn
+  - scikit-learn
+  - xgboost
+
+  - pip:
+      - gplearn
